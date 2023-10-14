@@ -1,15 +1,27 @@
 const app = Vue.createApp({
     data() {
         return {
-            showBooks: true,
-            title: 'The Final Empire',
-            author: 'This guy',
-            age: 45
+            showDrinks: true,
+            drinks: [
+                {name: 'Mojito', Liquor: 'White Rum'},
+                {name: 'Tom Collins', Liquor: 'Gin'},
+                {name: 'Negroni', Liquor: 'Gin'},
+            ]
         }
     },
     methods: {
-        toggleShowBooks() {
-            this.showBooks = !this.showBooks
+        toggleShowDrinks() {
+            this.showDrinks = !this.showDrinks
+        },
+        handleEvent(e, data) {
+            console.log(e, e.type)
+            if (data) {
+                console.log(data)
+            }
+        },
+        handleMousemove(e) {
+            this.x = e.offsetX,
+            this.y = e.offsetY
         } 
     }
 })

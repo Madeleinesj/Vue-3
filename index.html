@@ -2,25 +2,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Vue</title>
+    <title>TasteSeeker</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, Vue :)</h1>
+    <h1>Hello, Seeker :)</h1>
 
     <div id="app">
-        <div v-if="showBooks">
-        <p>{{ title }} - {{ author }} - {{ age }}</p>
-        </div>
-
-        <!--- <button v-on:click="age++">Increase age</button>
-        <button v-on:click="age--">Decrease age</button>
-        <div @click="changeTitle('Oathbringer')">Change book title</div> -->
-    
+        <!--attribute binding-->
         
-        <button @click="toggleShowBooks">
-            <span v-if="showBooks">Hide Books</span> 
-            <span v-if="!showBooks">Show Books</span>
+        <div v-if="showDrinks">
+            <ul>
+                <li v-for="drink in drinks">
+                    <h3>{{ drink.name }}</h3>
+                    <p>{{ drink.Liquor }}</p>
+                </li>
+            </ul>
+        </div>
+       
+        <button @click="toggleShowDrinks">
+            <span v-if="showDrinks">Hide Drinks</span> 
+            <span v-if="!showDrinks">Show Drinks</span>
         </button>
     </div>
 
