@@ -1,11 +1,12 @@
 const app = Vue.createApp({
     data() {
         return {
+            url: 'https://madeleinesj.github.io/MyPortfolioWebsite/',
             showDrinks: true,
             drinks: [
-                {name: 'Mojito', Liquor: 'White Rum'},
-                {name: 'Tom Collins', Liquor: 'Gin'},
-                {name: 'Negroni', Liquor: 'Gin'},
+                {name: 'Mojito', Liquor: 'White Rum', img: 'IMG/image3.jpg', Location: 'Amaro\'s Table', Place: 'Vancouver, WA', Price: '$9.99', isFav: true },
+                {name: 'Tom Collins', Liquor: 'Gin', img: 'IMG/image1.jpg', Location: 'Amaro\' Table', Place: 'Vancouver, WA', Price: '$10.00', isFav: false},
+                {name: 'Negroni', Liquor: 'Gin', img: 'IMG/image2.jpg', Location: 'Amaro\' Table', Place: 'Vancouver, WA', Price: '$10.00', isFav: false},
             ]
         }
     },

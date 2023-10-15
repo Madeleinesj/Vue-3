@@ -5,14 +5,40 @@
     <title>TasteSeeker</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
     <style>
-        .box {
-            padding: 100px 0;
-            width: 400px;
+        body{
+            background: purple;
+            max-width: 960px;
+            margin: 20px auto;
+            color: peachpuff;
             text-align: center;
-            background: #ddd;
-            margin: 20px;
-            display: inline-block;
         }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+            color: purple;
+        }
+        li{
+            list-style-type: none;
+            background: peachpuff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        img{
+           max-width: 25%;
+           height: auto; 
+           align-items: center;
+        }
+        h4, p{
+            color: purple;
+
+        }
+        /* .img {
+
+        } */
     </style>
 </head>
 <body>
@@ -20,12 +46,20 @@
 
     <div id="app">
         <!--attribute binding-->
-        
+        <!-- <a :href="url">best website ever</a> -->
         <div v-if="showDrinks">
             <ul>
-                <li v-for="drink in drinks">
-                    <h3>{{ drink.name }}</h3>
-                    <p>{{ drink.Liquor }}</p>
+                <li v-for="drink in drinks" :class="{ fav: drink.isFav }">
+                    <img :src="drink.img" :alt="drink.name">
+                    <h3> {{ drink.name }}</h3>
+                    <h3>~</h3>
+                    <h3> {{ drink.Liquor }}</h3>
+                    <h3>~</h3>
+                    <h3> {{ drink.Location }}</h3>
+                    <h3>~</h3>
+                    <h3> {{ drink.Place}}</h3>
+                    <h3>~</h3>
+                    <h3> {{ drink.Price }}</h3>
                 </li>
             </ul>
         </div>
