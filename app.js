@@ -14,6 +14,9 @@ const app = Vue.createApp({
         toggleShowDrinks() {
             this.showDrinks = !this.showDrinks
         },
+        toggleFav(drink) {
+            drink.isFav = !drink.isFav
+        },
         handleEvent(e, data) {
             console.log(e, e.type)
             if (data) {
@@ -24,6 +27,11 @@ const app = Vue.createApp({
             this.x = e.offsetX,
             this.y = e.offsetY
         } 
+    },
+    computed: {
+        filteredDrinks() {
+            return this.drinks.filter((drink) => drink.isFav)
+        }
     }
 })
 

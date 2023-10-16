@@ -6,20 +6,21 @@
     <script src="https://unpkg.com/vue@3.0.2"></script>
     <style>
         body{
-            background: purple;
+            background: pink;
             max-width: 960px;
             margin: 20px auto;
-            color: peachpuff;
+            color: steelblue;
             text-align: center;
+            font-family: 'Courier New', Courier, monospace;
         }
         p, h3, ul{
             margin: 0;
             padding: 0;
-            color: purple;
+            color: #D8BFD8;
         }
         li{
             list-style-type: none;
-            background: peachpuff;
+            background: palevioletred;
             margin: 20px auto;
             padding: 10px 20px;
             border-radius: 10px;
@@ -34,11 +35,10 @@
         }
         h4, p{
             color: purple;
-
         }
-        /* .img {
-
-        } */
+        li.fav {
+            background-color: purple;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +47,10 @@
     <div id="app">
         <!--attribute binding-->
         <!-- <a :href="url">best website ever</a> -->
-        <div v-if="showDrinks">
+        
+        <div v-if="showDrinks" v-if="showFav">
             <ul>
-                <li v-for="drink in drinks" :class="{ fav: drink.isFav }">
+                <li v-for="drink in filteredDrinks" :class="{ fav: drink.isFav }" @click="toggleFav(drink)">
                     <img :src="drink.img" :alt="drink.name">
                     <h3> {{ drink.name }}</h3>
                     <h3>~</h3>
